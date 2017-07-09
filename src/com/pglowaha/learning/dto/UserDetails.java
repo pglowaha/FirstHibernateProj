@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table (name="USER_DETAILS")
@@ -12,6 +13,7 @@ public class UserDetails {
 	
 	@Id
 	private int userId;
+	@Transient
 	private String userName;
 	private Date joinedDate;
 	private String Address;
