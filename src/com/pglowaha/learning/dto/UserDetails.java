@@ -4,8 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table (name="USER_DETAILS")
@@ -13,13 +15,13 @@ public class UserDetails {
 	
 	@Id
 	private int userId;
-	@Transient
 	private String userName;
+	@Temporal (TemporalType.DATE)
 	private Date joinedDate;
 	private String Address;
+	@Lob
 	private String description;
 
-	
 	public Date getJoinedDate() {
 		return joinedDate;
 	}
