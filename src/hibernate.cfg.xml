@@ -22,7 +22,8 @@
 
                 <property name="hibernate.show_sql">true</property>
 
-                <property name="hibernate.hbm2ddl.auto">create</property>
+				<!-- create- creates new db each time; update - will add data, not recreate the schema -->
+                <property name="hibernate.hbm2ddl.auto">update</property>
 
 				<mapping class="com.pglowaha.learning.dto.UserDetails"/>
         </session-factory>
