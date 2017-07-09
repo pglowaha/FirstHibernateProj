@@ -47,7 +47,7 @@ public class UserDetails {
 		this.userId = userId;
 	}
 	public String getUserName() {
-		return userName + " from getter";
+		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
