@@ -1,10 +1,13 @@
 package com.pglowaha.learning.dto;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.pglowaha.learning.Address;
 
 @Entity
 @Table (name="USER_DETAILS")
@@ -13,7 +16,14 @@ public class UserDetails {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int userId;
 	private String userName;
-
+	private Address address;
+	@Embedded
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public int getUserId() {
 		return userId;
 	}
