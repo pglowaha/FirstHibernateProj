@@ -9,26 +9,21 @@ import com.pglowaha.learning.dto.UserDetails;
 public class HibernateTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		UserDetails user = new UserDetails();
-		user.setUserId(1);
 		user.setUserName("First User");
+		
+		UserDetails user2 = new UserDetails();
+		user2.setUserName("Second User");
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
+		session.save(user2);
 		session.getTransaction().commit();
 		session.close();
 		
-		user = null;
-		
-		session = sessionFactory.openSession();
-		session.beginTransaction();
-		user = (UserDetails) session.get(UserDetails.class, 1);
-		System.out.println("User Name retrieved is " + user.getUserName());
-		
-		System.exit(0);
+		sessionFactory.close();
 	}
 
 }
