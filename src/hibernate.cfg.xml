@@ -26,6 +26,7 @@
                 <property name="hibernate.hbm2ddl.auto">create</property>
 
 				<mapping class="com.pglowaha.learning.dto.UserDetails"/>
+				<mapping class="com.pglowaha.learning.dto.Vehicle"/>
         </session-factory>
 
 </hibernate-configuration>
